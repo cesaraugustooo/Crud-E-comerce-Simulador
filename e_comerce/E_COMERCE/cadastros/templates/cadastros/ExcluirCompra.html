@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Excluir Venda</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style_venda.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Excluir Venda</h2>
+        <form action="" method="post" class="form-venda">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+            <h1>Deseja excluir {{object}} ?</h1>
+            <button type="submit" class="btn btn-primary">Excluir Venda</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+.tablee{
+    justify-content: center;
+    align-items: center;
+    display: flex ;
+}
+.tablee th, .tablee td{
+    padding: 30px;
+}
+body{
+    background-color: #f4f4f4;
+}
+.td2{
+    padding: 10px;
+}

@@ -1,0 +1,27 @@
+{% extends 'paginas/base.html' %}
+{% load static %}
+{% block conteudo %}
+<link rel="stylesheet" href="{% static 'list.css' %}">
+<div class="table">
+    <table class="tablee">
+        <tr>
+            <th>Tipo</th>
+            <th>Nome</th>
+            <th>Preço</th>
+        </tr>
+        
+        {% for campo in object_list %}
+        <tr>
+            <td>{{ campo.tipo }}</td>
+            <td>{{ campo.nome }}</td>
+            <td>{{ campo.preco }}</td>
+            <td>
+                <div class="td2"><button type="submit" class="btn btn-primary"><a href="{% url 'editar-venda' campo.pk %}">Editar</a></div></button>
+                <div class="td2"><button type="submit" class="btn btn-primary"><a href="{% url 'excluir-venda' campo.pk %}">Excluir</a></div></button>
+            </td>
+        </tr>
+        {% endfor %}
+        
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Online</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Loja Online</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'inicio' %}">Início</a></li>
+                <li><a href="{% url 'compra' %}">Comprar</a></li>
+                <li><a href="{% url 'venda' %}">Vender</a></li>
+                <li><a href="{% url 'listar-venda' %}">Listar suas vendas</a></li>
+                <li><a href="{% url 'listar-compra' %}">Carrinho</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <h1>Venda produtos</h1>
+            <h1>Liste, edite e exclua suas vendas</h1>
+            <h1>Compre produtos</h1>
+            <h1>Consulte, edite e exclua itens em seu carrinho</h1>
+        </section>
+        
+        <section class="destaques"> 
+            <h3>Produtos em Promoção</h3>
+            <div class="produtos">
+                {% for produto in object_list %}
+                    {% if produto.promocao == 'sim' %}
+                        <div class="produto">
+                            <a href="{% url 'compra' %}">{{ produto.nome }}</a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div> 
+        </section>
+    </main>
+</body>
+</html>

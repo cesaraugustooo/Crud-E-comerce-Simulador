@@ -1,0 +1,33 @@
+<!-- paginas/templates/paginas/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Loja Online</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'inicio' %}">Início</a></li>
+                <li><a href="{% url 'compra' %}">Comprar</a></li>
+                <li><a href="{% url 'venda' %}">Vender</a></li>
+                <li><a href="{% url 'listar-venda' %}">Listar suas vendas</a></li>
+                <li><a href="{% url 'listar-compra' %}">Carrinho</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+        {% block conteudo%}
+        {% endblock %}
+
+ 
+</body>
+</html>

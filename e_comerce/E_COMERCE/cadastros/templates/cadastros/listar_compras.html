@@ -1,0 +1,25 @@
+{% extends 'paginas/base.html' %}
+{% load static %}
+{% block conteudo %}
+<link rel="stylesheet" href="{% static 'list.css' %}">
+<div class="table">
+    <table class="tablee">
+        <tr>
+            <th>Tipo</th>
+            <th>Nome</th>
+            <th>Preço</th>
+        </tr>
+        
+        {% for compras in object_list %}
+        <tr>
+            <td>{{ compras.compra.nome }}</td>
+            <td>{{ compras.compra.tipo }}</td>
+            <td>{{ compras.compra.preco }}</td>
+            <td>
+                <div class="td2"><button type="submit" class="btn btn-primary"><a href="{% url 'editar-compra' compras.pk %}">Editar</a></div></button>
+                <div class="td2"><button type="submit" class="btn btn-primary"><a href="{% url 'excluir-compra' compras.pk %}">Excluir</a></div></button>
+            </td>
+        </tr>
+        {% endfor %}
+    
+{% endblock %}

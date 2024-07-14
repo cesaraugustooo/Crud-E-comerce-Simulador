@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastrar Venda</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style_venda.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Cadastrar Compra</h2>
+        <form action="" method="post" class="form-venda">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+            <button type="submit" class="btn btn-primary">Cadastrar venda</button>
+        </form>
+    </div>
+</body>
+</html>

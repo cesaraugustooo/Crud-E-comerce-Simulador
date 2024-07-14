@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Online</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Loja Online</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="{% url 'venda' %}">Vender</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">Carrinho</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Bem-vindo à nossa Loja Online</h2>
+            <p>Encontre os melhores produtos aos melhores preços!</p>
+            <a href="#" class="btn">Compre Agora</a>
+        </section>
+
+        <section class="destaques">
+            <h3>Produtos em Venda</h3>
+            <div class="produtos">
+                <div class="produto">
+                    <img src="produto1.jpg" alt="Produto 1">
+                    <h4>Produto 1</h4>
+                    <p>Descrição do produto 1.</p>
+                    <p class="preco">R$ 99,99</p>
+                    <a href="#" class="btn">Comprar</a>
+                </div>
+                <div class="produto">
+                    <img src="produto2.jpg" alt="Produto 2">
+                    <h4>Produto 2</h4>
+                    <p>Descrição do produto 2.</p>
+                    <p class="preco">R$ 199,99</p>
+                    <a href="#" class="btn">Comprar</a>
+                </div>
+                <div class="produto">
+                    <img src="produto3.jpg" alt="Produto 3">
+                    <h4>Produto 3</h4>
+                    <p>Descrição do produto 3.</p>
+                    <p class="preco">R$ 299,99</p>
+                    <a href="#" class="btn">Comprar</a>
+                </div>
+            </div>
+        </section>
+
+
+        
+
+
+</body>
+</html>
